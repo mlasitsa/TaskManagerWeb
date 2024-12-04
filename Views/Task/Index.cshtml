@@ -1,0 +1,36 @@
+@model List<string>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <form method="post" asp-action="Add">
+        <input type="text" name="task" placeholder="Enter a new task" required />
+        <button type="submit">Add Task</button>
+    </form>
+
+    <h2>Tasks</h2>
+    <ul>
+        @if (Model.Count == 0)
+        {
+            <li>No tasks available</li>
+        }
+        else
+        {
+            for (int i = 0; i < Model.Count; i++)
+            {
+                <li>
+                    @Model[i]
+                    <form method="post" asp-action="Remove" style="display:inline;">
+                        <input type="hidden" name="index" value="@i" />
+                        <button type="submit">Remove</button>
+                    </form>
+                </li>
+            }
+        }
+    </ul>
+</body>
+</html>
