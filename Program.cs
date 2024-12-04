@@ -2,7 +2,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<TaskService>(); // Register TaskService
+
+// Register TaskService with LoggingTaskService decorator
+builder.Services.AddSingleton<ITaskService>(provider =>
+{
+    var taskService = new TaskService(); // Core task service
+    return new LoggingTaskService(taskService); // Wrap with logging
+});
 
 var app = builder.Build();
 
@@ -15,12 +21,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseRouting();
 app.UseAuthorization();
 
-// Map default route to TaskController
+// Map default routes
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Task}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

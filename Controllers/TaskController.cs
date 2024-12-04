@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 public class TaskController : Controller
 {
-    private readonly TaskService _taskService;
+    private readonly ITaskService _taskService;
 
-    public TaskController(TaskService taskService)
+    public TaskController(ITaskService taskService)
     {
         _taskService = taskService;
     }
