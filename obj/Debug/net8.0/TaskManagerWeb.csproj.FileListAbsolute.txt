@@ -28,3 +28,5 @@ C:\Users\mlasitsa\Documents\Repos Software Design\TaskManagerWeb\obj\Debug\net8.
 C:\Users\mlasitsa\Documents\Repos Software Design\TaskManagerWeb\obj\Debug\net8.0\TaskManagerWeb.pdb
 C:\Users\mlasitsa\Documents\Repos Software Design\TaskManagerWeb\obj\Debug\net8.0\TaskManagerWeb.genruntimeconfig.cache
 C:\Users\mlasitsa\Documents\Repos Software Design\TaskManagerWeb\obj\Debug\net8.0\ref\TaskManagerWeb.dll
+C:\Users\mlasitsa\Documents\Repos Software Design\TaskManagerWeb\obj\Debug\net8.0\TaskManagerWeb.sourcelink.json
+C:\Users\mlasitsa\Documents\Repos Software Design\TaskManagerWeb\bin\Debug\net8.0\tasks.json
